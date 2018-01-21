@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>Stopwatch</title>
-        <link rel="javascript" href="app.js">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="script.js"></script>
     </head>
     <body>
         <center><h1 id="timer">0:00</h1></center>
@@ -11,59 +11,4 @@
         <button onclick="stop()" class="button" id="stop">Stop</button>
         <button onclick="restart()" class="button" id="restart">Restart</button>
     </body>
-    <script>
-        var milliseconds = 0;
-        var seconds = 0;
-        var minutes = 0;
-        var strMilliseconds;
-        var strSeconds;
-        var strMinutes;
-        var interval;
-        var running = true;
-
-        function count(){
-            milliseconds++;
-            if(milliseconds == 100){
-                seconds++;
-                milliseconds = 0;
-            }
-            if(seconds == 60){
-                minutes++;
-                seconds = 0;
-            }
-            strMilliseconds = String(milliseconds);
-            strSeconds = String(seconds);
-            if(minutes==0){
-                strMinutes = "";
-            } else{ 
-                strMinutes = String(minutes) + ":";
-            }
-            if(milliseconds<10){
-                strMilliseconds = "0" + strMilliseconds;
-            }
-            if(seconds<10 && minutes>0){
-                strSeconds = "0" + strSeconds;
-            }
-            document.getElementById("timer").innerHTML = strMinutes + strSeconds + ":" + strMilliseconds;
-        }
-
-        function start(){
-            if (running) {
-                interval = setInterval(count, 10); 
-            }
-            running = false;
-        }
-
-        function stop(){
-            interval = clearInterval(interval);
-            running = true;
-        }
-
-        function restart(){
-            stop();
-            milliseconds = 0;
-            seconds = 0;
-            minutes = 0;
-        }
-    </script>
 </html>
