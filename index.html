@@ -41,6 +41,9 @@
             if(milliseconds<10){
                 strMilliseconds = "0" + strMilliseconds;
             }
+            if(seconds<10 && minutes>0){
+                strSeconds = "0" + strSeconds;
+            }
             document.getElementById("timer").innerHTML = strMinutes + strSeconds + ":" + strMilliseconds;
         }
 
