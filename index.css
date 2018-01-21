@@ -1,0 +1,29 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 100px;
+    line-height: 0px;
+}
+#timer {
+    margin-top: 10%;
+}
+.button {
+	color: white;
+	background-color: #428aff;
+	border: none;
+	border-radius: 5px;
+	padding: 10;
+	height: 40px;
+	width: 70px;
+	font-size: 20px;
+	position: absolute;
+}
+#start {
+	left: 40.5%;
+}
+#stop {
+	left: 47.5%;
+}
+#restart {
+	right: 40%;
+	width: 80px;
+}
